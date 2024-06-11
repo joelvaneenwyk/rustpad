@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:rustpad && vite build",
+    "build:rustpad": "cargo build && wasm-pack build --target web rustpad-wasm",
     "serve": "vite preview",
     "format": "prettier --write ."
   },
