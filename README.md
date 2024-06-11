@@ -1,5 +1,7 @@
 # Rustpad
 
+<!-- markdownlint-disable MD033 MD045 -->
+
 [![Docker Pulls](https://img.shields.io/docker/pulls/ekzhang/rustpad)](https://hub.docker.com/r/ekzhang/rustpad/)
 [![Docker Image Size](https://img.shields.io/docker/image-size/ekzhang/rustpad/latest)](https://hub.docker.com/r/ekzhang/rustpad/)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ekzhang/rustpad/ci.yml)](https://github.com/ekzhang/rustpad/actions/workflows/ci.yml)
@@ -36,27 +38,27 @@ after 24 hours of inactivity.
 To run this application, you need to install Rust, `wasm-pack`, and Node.js.
 Then, build the WebAssembly portion of the app:
 
-```
+```bash
 wasm-pack build --target web rustpad-wasm
 ```
 
 When that is complete, you can install dependencies for the frontend React
 application:
 
-```
+```bash
 npm install
 ```
 
 Next, compile and run the backend web server:
 
-```
+```bash
 cargo run
 ```
 
 While the backend is running, open another shell and run the following command
 to start the frontend portion.
 
-```
+```bash
 npm run dev
 ```
 
@@ -68,7 +70,7 @@ reloading on changes.
 To run integration tests for the server, use the standard `cargo test` command.
 For the WebAssembly component, you can run tests in a headless browser with
 
-```
+```bash
 wasm-pack test --chrome --headless rustpad-wasm
 ```
 
@@ -99,7 +101,7 @@ automatically from the `Dockerfile` in this repository. You can pull the latest
 version of this image from Docker Hub. It has multi-platform support for
 `linux/amd64` and `linux/arm64`.
 
-```
+```bash
 docker pull ekzhang/rustpad
 ```
 
@@ -107,7 +109,7 @@ docker pull ekzhang/rustpad
 project root directory.) To run locally, execute the following command, then
 open `http://localhost:3030` in your browser.
 
-```
+```bash
 docker run --rm -dp 3030:3030 ekzhang/rustpad
 ```
 
